@@ -7,11 +7,126 @@ One person in your group should then create a Live Share link following the [Qui
 
 ## Programming Topics
 
-The programming topic of the exercises for this week's discussion are function passing and comprehensions. 
+The programming topic of the exercises for this week's discussion are C++ references (again), function passing, and comprehensions. 
 Comprehensions are special syntaxes available in Python for working with lists and creating new sequences or dictionaries. 
 
 To complete this discussion session, your group should complete the programming tasks and answer the questions in the instructions in a markdown file. 
 These tasks are meant to be collaborative, so work together to ensure that all group members understand the code.
+
+## C++ References
+
+References can be tricky for new C++ programmers, but they are a powerful tool for ensuring data is not copied unnecessarily, which is requried for good performance.
+In general, references and pointers allow for fine-grained control over "aliasing", which is the general concept of multiple variables referring
+to the same location in memory. That is, if two variables are aliased, then changes to the value of one variable will be reflected in the other.
+
+```c++
+double a = 10;
+double & b = a; // b and a are aliased
+```
+
+When declaring arguments to a function, declaring a parameter as a reference will alias that paramter to what is passed in. If not declared as
+a reference, the value of the variable will be copied instead and the variable will not be aliased.
+
+```c++
+
+void f(double & d)
+{...}
+
+int main(void)
+{
+  double x = 1.0;
+  f(x);  // x (here) and d (inside function) are aliased
+}
+```
+
+The same is true for returning from a function.
+
+### Exercise
+
+Consider the following code snippets. Which variables are aliased?
+
+1. ```c++
+   int f(int i)
+   {
+     i += 1;
+     return i;
+   }
+   
+   int main(void)
+   {
+     int j = 4;
+     int k = f(j);
+   }
+   ```
+
+1. ```c++
+   double f(const double & d)
+   {
+     return 2.0*d;
+   }
+   
+   int main(void)
+   {
+     double m = 9.123;
+     double m2 = f(m);
+   }
+   ```
+
+1. ```c++
+   double & f(double & q)
+   {
+     q = 3.14*q;
+     return q;
+   }
+   
+   int main(void)
+   {
+     double a = 7.9471;
+     double b = f(a);
+   }
+   ```
+
+1. ```c++
+   double & f(double & q)
+   {
+     q = 3.14*q;
+     return q;
+   }
+  
+   int main(void)
+   {
+     double a = 7.9471;
+     double & b = f(a);
+   }
+   ```
+
+
+1. ```c++
+   void f(std::vector<double> v)
+   {
+     v[0] = 3.14*v[0];
+   }
+   
+   int main(void)
+   {
+     std::vector<double> my_vec{1.0, 2.0, 3.0};
+     f(my_vec);
+   }
+   ```
+
+1. ```c++
+   double & f(std::vector<double> & v)
+   {
+     v[0] = 3.14*v[0];
+     return v[0];
+   }
+   
+   int main(void)
+   {
+     std::vector<double> my_vec{1.0, 2.0, 3.0};
+     double & b = f(my_vec);
+   }
+   ```
 
 ## Comprehensions
 Comprehensions are constructs in Python that will often let you avoid writing for loops.
