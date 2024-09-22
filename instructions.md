@@ -42,7 +42,7 @@ The same is true for returning from a function.
 
 ### Exercise
 
-Consider the following code snippets. Which variables are aliased?
+Consider the following code snippets. Which variables are aliased? Put your answers with justification in the class Google Slides presentation.
 
 1. ```c++
    int f(int i)
