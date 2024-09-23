@@ -141,7 +141,7 @@ With your group, discuss how you would design a Python class to perform integrat
 - What attributes will the class need?
 - What methods will the class need?
 
-Once you've designed the class, write it out in Python.
+Once you've designed the class, write it out in Python. Use the function in the link for Chem 280 as your function to integrate.
 
 #### Step 2: Extending to Other Integration Methods
 After implementing your midpoint rule integrator, consider the following questions:
