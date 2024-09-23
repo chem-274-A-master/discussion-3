@@ -84,8 +84,8 @@ trapezoidal = TrapezoidalIntegrator(0, 1, 1000)
 midpoint.integrate()
 trapezoidal.integrate()
 
-print(f"Midpoint result: {midpoint.get_result()}")
-print(f"Trapezoidal result: {trapezoidal.get_result()}")
+print(f"Midpoint result: {midpoint.result}")
+print(f"Trapezoidal result: {trapezoidal.result}")
 ```
 
 - Discuss:
