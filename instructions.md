@@ -153,7 +153,7 @@ After implementing your midpoint rule integrator, consider the following questio
 Discuss these questions with your group, and modify your design accordingly. You can implement multiple integrators if you'd like to explore this idea further.
 
 #### Step 3: First-class Functions
-In Python, functions are [first-class citizens](https://en.wikipedia.org/wiki/First-class_citizen), meaning they can be passed to and returned from object methods/functions. Review the file `first_class_functions.py` and write a short explanation of how it works in your README. 
+In Python, functions are [first-class citizens](https://en.wikipedia.org/wiki/First-class_citizen), meaning they can be passed to and returned from object methods/functions. Review the file `first_class_functions.py` and write a short explanation of how it works in your README and add to the Google Slides. 
 
 Once you've done that, modify your integrator class to take a function as an argument and use it to evaluate the integral.
 
