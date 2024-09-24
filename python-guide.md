@@ -103,7 +103,7 @@ In our class design with inheritance, we can update all the integrators to accep
 ```python
 class BaseIntegrator:
     def __init__(self, func, a, b, n):
-        self.func = func  # Accept a function as a parameter
+        self.function = func  # Accept a function as a parameter
         self.a = a
         self.b = b
         self.n = n
